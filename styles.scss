@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Reem+Kufi+Fun:wght@400;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+$header-color: #F5F5F5;
+
+%flexCenteredItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 100px;
+    @extend %flexCenteredItem;
+    justify-content: flex-start;
+    padding: 0 64px;
+    background-color: $header-color;
+    h1 {
+        font-weight: 300;
+        font-size: 2.5rem;
+        font-family: 'Reem Kufi Fun', sans-serif;
+        &::before {
+            content: '🚀 ';
+            font-size: 90%;
+            margin-right: 4px;
+        }
+    }
+}
+
+.add-new-book {
+    // display: none;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 99;
+    width: 370px;
+    height: 500px;
+    top: 170px;
+    right: 50%;
+    transform: translate(50%);
+    border-radius: 20px;
+    background-color: $header-color;
+    border: 5px solid #212121;
+    padding: 30px;
+    h2 {
+        text-align: center;
+        font-family: 'Reem Kufi Fun', sans-serif;
+        font-size: 1.9rem;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+    input[type="text"], input[type="number"] {
+        box-sizing: border-box;
+        width: 100%;
+        border: none;
+        margin-bottom: 35px;
+        height: 60px;
+        border-radius: 10px;
+        cursor: text;
+        padding: 5px 10px;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    label {
+        margin-left: 8px;
+        font-size: 1.3rem;
+    }
+    .checkbox {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 10px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    input[type="checkbox"] {
+        width: 25px;
+        height: 25px;
+        border: 1px solid;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #addBook {
+        font-family: 'Reem Kufi Fun', sans-serif;
+        font-weight: 600;
+        width: 140px;
+        box-sizing: border-box;
+        height: 40px;
+        font-size: 1rem;
+        border-radius: 10px;
+        display: block;
+        margin: 25px auto 10px auto;
+        background-color: #B2FF59;
+        border: 3px solid #689F38;
+    
+        &:hover {
+            background-color: #9CCC65;
+            cursor: pointer
+        }
+    
+        &:active {
+            border-color: black;
+        }
+    }
+}
+
+.overlay {
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.447);
+}
+
+main {
+    min-height: calc(100vh - 210px);
+    background: linear-gradient(90deg, #F5F5F5, #eee);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.276);
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 0 40px 40px 40px;
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        justify-items: center;
+        .card {
+            button {
+            padding: 6px 12px;
+            border: 1px solid;
+            border-radius: 12px;
+            }
+
+            .close {
+                background-color: #616161;
+                border: 3px solid black;
+                svg {
+                    scale: 0.9;
+                    margin-bottom: -3.8px;
+                    color: white;
+                }
+                &:hover {
+                    background-color: #9E9E9E;
+                    cursor: pointer
+                }
+                &:active {
+                    background-color: #F5F5F5;
+                    svg {
+                        color: black;
+                    }
+                }
+            }
+
+            .read {
+                font-family: 'Reem Kufi Fun', sans-serif;
+                font-weight: 600;
+                background-color: #B2FF59;
+                border: 3px solid #689F38;
+                &:hover {
+                    background-color: #9CCC65;
+                    cursor: pointer
+                }
+                &:active {
+                    border-color: black;
+                }
+            }
+
+            .unread {
+                font-family: 'Reem Kufi Fun', sans-serif;
+                    font-weight: 600;
+                    background-color: #FFCDD2;
+                    border: 3px solid #F44336;
+                
+                    &:hover {
+                        background-color: #EF9A9A;
+                        cursor: pointer
+                    }
+                
+                    &:active {
+                        border-color: black;
+                    }
+            }
+    
+            .btns-container {
+                display: flex;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+    
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+    
+                li {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    font-size: 1rem;
+                    padding-bottom: 14px;
+                    border-bottom: 1px solid;
+                    .read-state {
+                        color:red;
+                    }
+                    .name {
+                        font-size: 1.1rem;
+                        display: flex;
+                        align-items: center;
+                        svg {
+                            scale: 0.9;
+                            margin-top: -4px;
+                            margin-right: 2px;
+                        }
+                    }
+                }
+                li:last-child {
+                    border: none;
+                    padding: 0;
+                }
+
+            }
+
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            width: 250px;
+            border: 4px solid #757575;
+            border-radius: 12px;
+            height: 300px;
+            background-color: #FAFAFA;
+}
+    }
+    .new-book-btn {
+        height: 140px;
+        @extend %flexCenteredItem;
+        button {
+            @extend %flexCenteredItem;
+            gap: 4px;
+            font-family: 'Reem Kufi Fun', sans-serif;
+            font-size: 1.2rem;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            background-color: #FFD54F;
+            border: 4px solid #FFC107;
+            &:hover {
+                background-color: #FFC107;
+                border-color: #FFA000;
+                cursor: pointer
+            }
+            &:active {
+                border-color: black
+            }
+            img {
+                width: 20px;
+            }
+
+        }
+    }
+}
+
+footer {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.276);
+    height: 70px;
+    font-family: 'Handlee', cursive;
+    @extend %flexCenteredItem;
+    background-color: #F5F5F5;
+    p {
+        @extend %flexCenteredItem;
+        gap: 4px;
+    }
+}

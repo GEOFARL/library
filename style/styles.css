@@ -1,3 +1,261 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Handlee&family=Josefin+Sans:wght@200;300;400;500;600;700&family=Reem+Kufi+Fun:wght@400;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+footer p, footer, main .new-book-btn button, main .new-book-btn, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 100px;
+  justify-content: flex-start;
+  padding: 0 64px;
+  background-color: #F5F5F5;
+}
+header h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  font-family: "Reem Kufi Fun", sans-serif;
+}
+header h1::before {
+  content: "🚀 ";
+  font-size: 90%;
+  margin-right: 4px;
+}
+
+.add-new-book {
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 99;
+  width: 370px;
+  height: 500px;
+  top: 170px;
+  right: 50%;
+  transform: translate(50%);
+  border-radius: 20px;
+  background-color: #F5F5F5;
+  border: 5px solid #212121;
+  padding: 30px;
+}
+.add-new-book h2 {
+  text-align: center;
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.add-new-book input[type=text], .add-new-book input[type=number] {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  margin-bottom: 35px;
+  height: 60px;
+  border-radius: 10px;
+  cursor: text;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.add-new-book label {
+  margin-left: 8px;
+  font-size: 1.3rem;
+}
+.add-new-book .checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.add-new-book input[type=checkbox] {
+  width: 25px;
+  height: 25px;
+  border: 1px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.add-new-book #addBook {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-weight: 600;
+  width: 140px;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 1rem;
+  border-radius: 10px;
+  display: block;
+  margin: 25px auto 10px auto;
+  background-color: #B2FF59;
+  border: 3px solid #689F38;
+}
+.add-new-book #addBook:hover {
+  background-color: #9CCC65;
+  cursor: pointer;
+}
+.add-new-book #addBook:active {
+  border-color: black;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.447);
+}
+
+main {
+  min-height: calc(100vh - 210px);
+  background: linear-gradient(90deg, #F5F5F5, #eee);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.276);
+  font-family: "Josefin Sans", sans-serif;
+  padding: 0 40px 40px 40px;
+}
+main .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+main .card-container .card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 250px;
+  border: 4px solid #757575;
+  border-radius: 12px;
+  height: 300px;
+  background-color: #FAFAFA;
+}
+main .card-container .card button {
+  padding: 6px 12px;
+  border: 1px solid;
+  border-radius: 12px;
+}
+main .card-container .card .close {
+  background-color: #616161;
+  border: 3px solid black;
+}
+main .card-container .card .close svg {
+  scale: 0.9;
+  margin-bottom: -3.8px;
+  color: white;
+}
+main .card-container .card .close:hover {
+  background-color: #9E9E9E;
+  cursor: pointer;
+}
+main .card-container .card .close:active {
+  background-color: #F5F5F5;
+}
+main .card-container .card .close:active svg {
+  color: black;
+}
+main .card-container .card .read {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-weight: 600;
+  background-color: #B2FF59;
+  border: 3px solid #689F38;
+}
+main .card-container .card .read:hover {
+  background-color: #9CCC65;
+  cursor: pointer;
+}
+main .card-container .card .read:active {
+  border-color: black;
+}
+main .card-container .card .unread {
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-weight: 600;
+  background-color: #FFCDD2;
+  border: 3px solid #F44336;
+}
+main .card-container .card .unread:hover {
+  background-color: #EF9A9A;
+  cursor: pointer;
+}
+main .card-container .card .unread:active {
+  border-color: black;
+}
+main .card-container .card .btns-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+main .card-container .card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .card-container .card ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  padding-bottom: 14px;
+  border-bottom: 1px solid;
+}
+main .card-container .card ul li .read-state {
+  color: red;
+}
+main .card-container .card ul li .name {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+}
+main .card-container .card ul li .name svg {
+  scale: 0.9;
+  margin-top: -4px;
+  margin-right: 2px;
+}
+main .card-container .card ul li:last-child {
+  border: none;
+  padding: 0;
+}
+main .new-book-btn {
+  height: 140px;
+}
+main .new-book-btn button {
+  gap: 4px;
+  font-family: "Reem Kufi Fun", sans-serif;
+  font-size: 1.2rem;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  background-color: #FFD54F;
+  border: 4px solid #FFC107;
+}
+main .new-book-btn button:hover {
+  background-color: #FFC107;
+  border-color: #FFA000;
+  cursor: pointer;
+}
+main .new-book-btn button:active {
+  border-color: black;
+}
+main .new-book-btn button img {
+  width: 20px;
+}
+
+footer {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.276);
+  height: 70px;
+  font-family: "Handlee", cursive;
+  background-color: #F5F5F5;
+}
+footer p {
+  gap: 4px;
+}
 
 /*# sourceMappingURL=styles.css.map */
