@@ -28,8 +28,20 @@
       </div>
       <div class="add-new-book">
         <h2>Add new book</h2>
-        <input type="text" name="book_title" placeholder="Title" required />
-        <input type="text" name="book_author" placeholder="Author" required />
+        <input
+          type="text"
+          name="book_title"
+          placeholder="Title"
+          required
+          id="title"
+        />
+        <input
+          type="text"
+          name="book_author"
+          placeholder="Author"
+          required
+          id="author"
+        />
         <input
           type="number"
           name="book_pages"
@@ -37,10 +49,11 @@
           required
           min="0"
           max="2000"
+          id="pages"
         />
         <div class="checkbox">
           <label for="isRead">Have you read it?</label>
-          <input type="checkbox" name="book_read" id="isRead" required />
+          <input type="checkbox" name="book_read" id="isRead" />
         </div>
         <button id="addBook">Submit</button>
       </div>
@@ -55,7 +68,7 @@
                 />
               </svg>
             </button>
-            <button class="read">READ</button>
+            <button class="toggle"></button>
           </div>
           <ul>
             <li>
@@ -102,186 +115,6 @@
                 >Read already:
               </div>
               <span class="read-state">Not read</span>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="btns-container">
-            <button class="close">
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"
-                />
-              </svg>
-            </button>
-            <button class="unread">UNREAD</button>
-          </div>
-          <ul>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
-                  /></svg
-                >Title:
-              </div>
-              <span class="title">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z"
-                  />
-                </svg>
-                Author:
-              </div>
-              <span class="author">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"
-                  /></svg
-                >Pages
-              </div>
-              <span class="num-of-pages">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M16.5 11L13 7.5L14.4 6.1L16.5 8.2L20.7 4L22.1 5.4L16.5 11M11 7H2V9H11V7M21 13.4L19.6 12L17 14.6L14.4 12L13 13.4L15.6 16L13 18.6L14.4 20L17 17.4L19.6 20L21 18.6L18.4 16L21 13.4M11 15H2V17H11V15Z"
-                  /></svg
-                >Read already:
-              </div>
-              <span class="read-state">Not read</span>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="btns-container">
-            <button class="close">
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"
-                />
-              </svg>
-            </button>
-            <button class="read">READ</button>
-          </div>
-          <ul>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
-                  /></svg
-                >Title:
-              </div>
-              <span class="title">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z"
-                  />
-                </svg>
-                Author:
-              </div>
-              <span class="author">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"
-                  /></svg
-                >Pages
-              </div>
-              <span class="num-of-pages">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M16.5 11L13 7.5L14.4 6.1L16.5 8.2L20.7 4L22.1 5.4L16.5 11M11 7H2V9H11V7M21 13.4L19.6 12L17 14.6L14.4 12L13 13.4L15.6 16L13 18.6L14.4 20L17 17.4L19.6 20L21 18.6L18.4 16L21 13.4M11 15H2V17H11V15Z"
-                  /></svg
-                >Read already:
-              </div>
-              <span class="read-state">Not read</span>
-            </li>
-          </ul>
-        </div>
-        <div class="card">
-          <div class="btns-container">
-            <button class="close">
-              <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                <path
-                  fill="currentColor"
-                  d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z"
-                />
-              </svg>
-            </button>
-            <button class="read">READ</button>
-          </div>
-          <ul>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"
-                  /></svg
-                >Title:
-              </div>
-              <span class="title">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M16 17V19H2V17S2 13 9 13 16 17 16 17M12.5 7.5A3.5 3.5 0 1 0 9 11A3.5 3.5 0 0 0 12.5 7.5M15.94 13A5.32 5.32 0 0 1 18 17V19H22V17S22 13.37 15.94 13M15 4A3.39 3.39 0 0 0 13.07 4.59A5 5 0 0 1 13.07 10.41A3.39 3.39 0 0 0 15 11A3.5 3.5 0 0 0 15 4Z"
-                  />
-                </svg>
-                Author:
-              </div>
-              <span class="author">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M18,22A2,2 0 0,0 20,20V4C20,2.89 19.1,2 18,2H12V9L9.5,7.5L7,9V2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18Z"
-                  /></svg
-                >Pages
-              </div>
-              <span class="num-of-pages">Template</span>
-            </li>
-            <li>
-              <div class="name">
-                <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M16.5 11L13 7.5L14.4 6.1L16.5 8.2L20.7 4L22.1 5.4L16.5 11M11 7H2V9H11V7M21 13.4L19.6 12L17 14.6L14.4 12L13 13.4L15.6 16L13 18.6L14.4 20L17 17.4L19.6 20L21 18.6L18.4 16L21 13.4M11 15H2V17H11V15Z"
-                  /></svg
-                >Read already:
-              </div>
-              <span class="read-state" style="color: #33691e">Read</span>
             </li>
           </ul>
         </div>

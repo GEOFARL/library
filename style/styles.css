@@ -29,6 +29,7 @@ header h1::before {
 }
 
 .add-new-book {
+  display: none;
   box-sizing: border-box;
   position: fixed;
   z-index: 99;
@@ -104,6 +105,7 @@ header h1::before {
 }
 
 .overlay {
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -128,7 +130,7 @@ main .card-container {
 }
 main .card-container .card {
   padding: 20px;
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 30px;
   width: 250px;
@@ -218,6 +220,11 @@ main .card-container .card ul li .name svg {
   scale: 0.9;
   margin-top: -4px;
   margin-right: 2px;
+}
+main .card-container .card ul li .title, main .card-container .card ul li .author {
+  width: 150px;
+  text-align: right;
+  overflow: scroll;
 }
 main .card-container .card ul li:last-child {
   border: none;
